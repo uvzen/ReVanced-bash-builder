@@ -13,9 +13,10 @@ A simple bash script written by me that I wrote for myself and placed here so th
 
 During installation Git for Windows, choose the following options:
 ```
+- Add a Git Bash Profile to Windows Terminal
 - Git from the command line and also 3rd-party software
 - Checkout Windows-style, commit Unix-style endings
-- Use MinTTY (the default terminal MSYS2)
+- Use Windows' default console window
 ```
 ## Linux user
 - [Zulu JDK 17 64-bit for Linux](https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-linux_amd64.deb)
