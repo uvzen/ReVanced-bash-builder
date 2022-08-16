@@ -51,7 +51,7 @@ rm_old()
 	rm -rf packages/revanced-cli*.jar
 	rm -rf packages/revanced-patches*.jar
 	rm -rf packages/app-release-unsigned.apk
-	printf '%b\n' "${RED}Old packages have been removed!${NC}"
+	printf '%b\n' "${RED}Old packages have been removed${NC}"
 }
 download_needed() 
 {
@@ -94,7 +94,7 @@ ytpatch()
 	printf '%b\n' "${YELLOW}Patching YouTube app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $youtube -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
-	printf '%b\n' "${CYAN}Done!${NC}";
+	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	ytname
 	if [[ -d "revanced-cache" ]]; then
@@ -108,7 +108,7 @@ ytmpatch()
 	printf '%b\n' "${YELLOW}Patching YouTube Music app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $youtubemusic -c -o ReVanced-Music.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
-	printf '%b\n' "${CYAN}Done!";
+	printf '%b\n' "${CYAN}Done";
 	ytmname
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
@@ -121,7 +121,7 @@ ttpatch()
 	printf '%b\n' "${YELLOW}Patching Twitter app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $twitter -c -o Twitter.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
-	printf '%b\n' "${CYAN}Done!${NC}";
+	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	ttname
 	if [[ -d "revanced-cache" ]]; then
@@ -135,7 +135,7 @@ rtpatch()
 	printf '%b\n' "${YELLOW}Patching Reddit app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $reddit -c -o Reddit.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk -r
 	printf '%b\n' "";
-	printf '%b\n' "${CYAN}Done!${NC}";
+	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	rtname
 	if [[ -d "revanced-cache" ]]; then
@@ -222,7 +222,7 @@ apk_dowloader()
 	mv Twitter-9.54.0.apk apk/
 	curl -qLJO https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/Reddit-2022.30.0.apk
 	mv Reddit-2022.30.0.apk apk/
-	printf '%b\n' "${YELLOW}Downloaded!${NC}"
+	printf '%b\n' "${YELLOW}Downloaded${NC}"
 }
 necessary_files()
 {
@@ -233,25 +233,20 @@ necessary_files()
 	printf '%b\n' "${WHITE}1) ${CYAN}Download necessary packages from github${NC}";
 	printf '%b\n' "${WHITE}2) ${CYAN}Download necessary apk from github${NC}";
 	printf '%b\n' "${WHITE}3) ${CYAN}Back to menu${NC}";
-	read wybor4
+	read wybor2
 
-	if [[ $wybor4 < 1 ]] && [[ $wybor4 > 2 ]]; then
+	if [[ $wybor2 < 1 ]] && [[ $wybor2 > 2 ]]; then
 	clear
-	printf '%b\n' "${RED}Choose correctly!${NC}";
+	printf '%b\n' "${RED}Choose correctly${NC}";
 	printf '%b\n' "";
 	main
-	elif [[ $wybor4 == 1 ]]; then
+	elif [[ $wybor2 == 1 ]]; then
 		checker
 		necessary_files
-	elif [[ $wybor4 == 2 ]]; then
-		
-		
-		
-		
-		
+	elif [[ $wybor2 == 2 ]]; then
 		apk_dowloader
 		necessary_files
-	elif [[ $wybor4 == 3 ]]; then
+	elif [[ $wybor2 == 3 ]]; then
 		main
 	fi
 }
@@ -267,22 +262,22 @@ patcher()
 	printf '%b\n' "${WHITE}3) ${CYAN}Patch Twitter${NC}";
 	printf '%b\n' "${WHITE}4) ${CYAN}Patch Reddit${NC}"
 	printf '%b\n' "${WHITE}5) ${CYAN}Back to menu${NC}";
-	read wybor5
+	read wybor3
 
-	if [[ $wybor5 < 1 ]] && [[ $wybor5 > 5 ]]; then
+	if [[ $wybor3 < 1 ]] && [[ $wybor3 > 5 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
 		main
-	elif [[ $wybor5 == 1 ]]; then
+	elif [[ $wybor3 == 1 ]]; then
 		ytpatch
-	elif [[ $wybor5 == 2 ]]; then
+	elif [[ $wybor3 == 2 ]]; then
 		ytmpatch
-	elif [[ $wybor5 == 3 ]]; then
+	elif [[ $wybor3 == 3 ]]; then
 		ttpatch
-	elif [[ $wybor5 == 4 ]]; then
+	elif [[ $wybor3 == 4 ]]; then
 		rtpatch
-	elif [[ $wybor5 == 5 ]]; then
+	elif [[ $wybor3 == 5 ]]; then
 		main
 	fi
 }
@@ -307,7 +302,7 @@ main()
 	printf '%b\n' "${WHITE}3) ${CYAN}Exit${NC}";
 	read wybor1;
 
-	if [[ $wybor1 < 1 ]] && [[ $wybor1 > 6 ]]; then
+	if [[ $wybor1 < 1 ]] && [[ $wybor1 > 3 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
