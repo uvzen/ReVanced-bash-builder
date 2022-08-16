@@ -9,7 +9,7 @@ A simple bash script written by me that I wrote for myself and placed here so th
 ## Windows user:
 - [Git for Windows](https://gitforwindows.org/) or [Linux WSL](https://docs.microsoft.com/en-us/windows/wsl/about) (it will work slower, and need [Zulu JDK 17 64-bit for Linux](https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-linux_amd64.deb))
 - [Zulu JDK 17 64-bit for Windows](https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-win_x64.msi)
-- Relatively stable internet to download the required packages and applications
+- Internet connection for download the required packages and applications
 
 During installation Git for Windows, choose the following options:
 ```
@@ -19,7 +19,7 @@ During installation Git for Windows, choose the following options:
 ```
 ## Linux user
 - [Zulu JDK 17 64-bit for Linux](https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-linux_amd64.deb)
-- Internet connection to download the required packages and applications
+- Internet connection for download the required packages and applications
 
 ## How to use
 
