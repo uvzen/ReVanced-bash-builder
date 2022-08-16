@@ -17,7 +17,7 @@ During installation Git for Windows, choose the following options:
 ```
 ## Linux user
 - [Zulu JDK 17 64-bit for Linux](https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-linux_amd64.deb)
-- Relatively stable internet to download the required packages and applications
+- Internet connection to download the required packages and applications
 
 ## How to use
 
