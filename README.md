@@ -52,6 +52,7 @@ pkg wget openjdk-17 -y
 termux-setup-storage
 wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/ReVanced-android.sh
 ```
-3. Run script by typing: ./ReVanced-android.sh
+3. Run script by typing: 
+```./ReVanced-android.sh```
 4. When you run the script for the first time, download the necessary packages and applications
 5. Enjoy build ReVanced on android
