@@ -45,7 +45,7 @@ During installation Git for Windows, choose the following options:
 
 ### Android
 1. Open Termux app
-2. After that, you have to run these commands:
+2. You have to run these commands:
 ```
 pkg update
 pkg wget openjdk-17 -y
