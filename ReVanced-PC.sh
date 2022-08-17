@@ -214,8 +214,8 @@ apk_dowloader()
 	fi
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
-    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.29.34.apk
-    mv YouTube-17.29.34.apk apk/
+    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.32.35.apk.apk
+    mv YouTube-17.32.35.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
 	mv YouTubeMusic-5.17.51.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.54.0.apk
