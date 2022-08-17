@@ -102,7 +102,9 @@ ytpatch()
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	ytname
+	printf '%b\n' "${YELLOW}Copying YouTube ReVanced to internal memory...${NC}";
 	cp builds/ReVanced-*.apk /data/data/com.termux/files/home/storage/shared
+	printf '%b\n' "${YELLOW}Done${NC}";
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
@@ -118,7 +120,9 @@ ytmpatch()
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done";
 	ytmname
+	printf '%b\n' "${YELLOW}Copying YouTube Music ReVanced to internal memory...${NC}";
 	cp builds/ReVanced-Music-*.apk /data/data/com.termux/files/home/storage/shared
+	printf '%b\n' "${YELLOW}Done${NC}";
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
@@ -135,7 +139,9 @@ ttpatch()
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	ttname
+	printf '%b\n' "${YELLOW}Copying Twitter ReVanced to internal memory...${NC}";
 	cp builds/Twitter-*.apk /data/data/com.termux/files/home/storage/shared
+	printf '%b\n' "${YELLOW}Done${NC}";
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
@@ -152,7 +158,9 @@ rtpatch()
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
 	rtname
+	printf '%b\n' "${YELLOW}Copying Reddit ReVanced to internal memory...${NC}";
 	cp builds/Reddit-*.apk /data/data/com.termux/files/home/storage/shared
+	printf '%b\n' "${YELLOW}Done${NC}";
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
