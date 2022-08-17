@@ -51,6 +51,7 @@ pkg update
 pkg wget openjdk-17 -y
 termux-setup-storage
 wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/ReVanced-android.sh
+chmod +x ReVanced-android.sh
 ```
 3. Run script by typing: 
 ```./ReVanced-android.sh```
