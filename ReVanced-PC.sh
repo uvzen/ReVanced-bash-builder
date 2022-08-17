@@ -204,11 +204,11 @@ apk_dowloader()
 		printf '%b\n' "${BLUE}Removing YouTube Music apk...${NC}"
 		rm apk/YouTubeMusic-*.apk
 	fi
-	if [[ -f apk/Twitter-9.54.0.apk ]]; then
+	if [[ -f apk/Twitter-9.54.1.apk ]]; then
 		printf '%b\n' "${BLUE}Removing Twitter apk...${NC}"
 		rm apk/Twitter-*.apk
 	fi
-	if [[ -f apk/Reddit-2022.30.0.apk ]]; then
+	if [[ -f apk/Reddit-2022.31.0.apk ]]; then
 		printf '%b\n' "${BLUE}Removing Reddit apk...${NC}"
 		rm apk/Reddit-*.apk
 	fi
@@ -218,10 +218,10 @@ apk_dowloader()
     mv YouTube-17.32.35.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
 	mv YouTubeMusic-5.17.51.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.54.0.apk
-	mv Twitter-9.54.0.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit-2022.30.0.apk
-	mv Reddit-2022.30.0.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.54.1.apk
+	mv Twitter-9.54.1.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit-2022.31.0.apk
+	mv Reddit-2022.31.0.apk apk/
 	printf '%b\n' "${YELLOW}Downloaded${NC}"
 }
 necessary_files()
