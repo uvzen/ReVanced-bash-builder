@@ -196,7 +196,7 @@ logo()
 }
 apk_dowloader()
 {
-	if [[ -f apk/YouTube-17.29.34.apk ]]; then
+	if [[ -f apk/YouTube-17.32.35.apk ]]; then
 		printf '%b\n' "${BLUE}Removing YouTube apk...${NC}"
 		rm apk/YouTube-*.apk
 	fi
