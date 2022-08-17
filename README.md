@@ -23,7 +23,7 @@ During installation Git for Windows, choose the following options:
 - Internet connection for download the required packages and applications
 
 ### Android user:
-- Installed [Termux APP](https://f-droid.org/en/packages/com.termux/) from [F-droid](https://f-droid.org/en/)
+- Installed [Termux](https://f-droid.org/en/packages/com.termux/) from [F-droid](https://f-droid.org/en/)
 - Internet connection for download the required packages and applications
 
 # How to use
