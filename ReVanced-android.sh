@@ -63,7 +63,7 @@ download_needed()
         wget https://github.com/revanced/revanced-cli/releases/download/v$revanced_cli_version/$cli_filename \
         wget https://github.com/revanced/revanced-patches/releases/download/v$revanced_patches_version/$patches_filename \
         wget https://github.com/revanced/revanced-integrations/releases/download/v$revanced_integrations_version/$integrations_filename \
-        wget https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/aapt2 \
+        wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/aapt2 \
         ; do
         n=$(($n+1))	
         printf '%b\n' "${CYAN}$n) ${YELLOW}Downloading $i${NC}"
@@ -229,13 +229,13 @@ apk_dowloader()
 	fi
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
-    curl -qLJO https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/YouTube-17.29.34.apk
+    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.29.34.apk
     mv YouTube-17.29.34.apk apk/
-	curl -qLJO https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
 	mv YouTubeMusic-5.17.51.apk apk/
-	curl -qLJO https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/Twitter-9.54.0.apk
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.54.0.apk
 	mv Twitter-9.54.0.apk apk/
-	curl -qLJO https://github.com/uvzen/RVCD-bash-builder/releases/download/APPS/Reddit-2022.30.0.apk
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit-2022.30.0.apk
 	mv Reddit-2022.30.0.apk apk/
 	printf '%b\n' "${YELLOW}Downloaded${NC}"
 }
