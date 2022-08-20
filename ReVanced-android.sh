@@ -219,22 +219,14 @@ logo()
 }
 apk_dowloader()
 {
-	if [[ -f apk/YouTube-17.32.35.apk ]]; then
-		printf '%b\n' "${BLUE}Removing YouTube apk...${NC}"
-		rm apk/YouTube-*.apk
-	fi
-	if [[ -f apk/YouTubeMusic-5.17.51.apk ]]; then
-		printf '%b\n' "${BLUE}Removing YouTube Music apk...${NC}"
-		rm apk/YouTubeMusic-*.apk
-	fi
-	if [[ -f apk/Twitter-9.55.0.apk ]]; then
-		printf '%b\n' "${BLUE}Removing Twitter apk...${NC}"
-		rm apk/Twitter-*.apk
-	fi
-	if [[ -f apk/Reddit-2022.31.0.apk ]]; then
-		printf '%b\n' "${BLUE}Removing Reddit apk...${NC}"
-		rm apk/Reddit-*.apk
-	fi
+	printf '%b\n' "${YELLOW}Removing YouTube apk if it exists...${NC}"
+	rm -rf apk/YouTube-*.apk
+	printf '%b\n' "${YELLOW}Removing YouTube Music apk if it exists...${NC}"
+	rm -rf apk/YouTubeMusic-*.apk
+	printf '%b\n' "${YELLOW}Removing Twitter apk if it exists...${NC}"
+	rm -rf apk/Twitter-*.apk
+	printf '%b\n' "${YELLOW}Removing Reddit apk if it exists...${NC}"
+	rm -rf apk/Reddit-*.apk
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
     curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.32.35.apk
