@@ -91,6 +91,8 @@ checker()
 
 ytpatch()
 {
+	printf '%b\n' "${BLUE}Removing old ReVanced YouTube apk if it exists...${NC}"
+	rm -rf builds/ReVanced-*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $youtube -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
@@ -105,6 +107,8 @@ ytpatch()
 
 ytmpatch()
 {
+	printf '%b\n' "${BLUE}Removing old ReVanced YouTube Music apk if it exists...${NC}"
+	rm -rf builds/ReVanced-Music*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube Music app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $youtubemusic -c -o ReVanced-Music.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
@@ -118,6 +122,8 @@ ytmpatch()
 
 ttpatch()
 {
+	printf '%b\n' "${BLUE}Removing old ReVanced Twitter apk if it exists...${NC}"
+	rm -rf builds/Twitter-*.apk
 	printf '%b\n' "${YELLOW}Patching Twitter app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $twitter -c -o Twitter.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
@@ -132,6 +138,8 @@ ttpatch()
 
 rtpatch()
 {
+	printf '%b\n' "${BLUE}Removing old ReVanced Reddit apk if it exists...${NC}"
+	rm -rf builds/Reddit-*.apk
 	printf '%b\n' "${YELLOW}Patching Reddit app...${NC}";
 	java -jar packages/revanced-cli*.jar -a $reddit -c -o Reddit.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk -r
 	printf '%b\n' "";
@@ -196,22 +204,14 @@ logo()
 }
 apk_dowloader()
 {
-	if [[ -f apk/YouTube-17.32.35.apk ]]; then
-		printf '%b\n' "${BLUE}Removing YouTube apk...${NC}"
-		rm apk/YouTube-*.apk
-	fi
-	if [[ -f apk/YouTubeMusic-5.17.51.apk ]]; then
-		printf '%b\n' "${BLUE}Removing YouTube Music apk...${NC}"
-		rm apk/YouTubeMusic-*.apk
-	fi
-	if [[ -f apk/Twitter-9.55.0.apk ]]; then
-		printf '%b\n' "${BLUE}Removing Twitter apk...${NC}"
-		rm apk/Twitter-*.apk
-	fi
-	if [[ -f apk/Reddit-2022.31.0.apk ]]; then
-		printf '%b\n' "${BLUE}Removing Reddit apk...${NC}"
-		rm apk/Reddit-*.apk
-	fi
+	printf '%b\n' "${YELLOW}Removing YouTube apk if it exists...${NC}"
+	rm -rf apk/YouTube-*.apk
+	printf '%b\n' "${YELLOW}Removing YouTube Music apk if it exists...${NC}"
+	rm -rf apk/YouTubeMusic-*.apk
+	printf '%b\n' "${YELLOW}Removing Twitter apk if it exists...${NC}"
+	rm -rf apk/Twitter-*.apk
+	printf '%b\n' "${YELLOW}Removing Reddit apk if it exists...${NC}"
+	rm -rf apk/Reddit-*.apk
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
     curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.32.35.apk
