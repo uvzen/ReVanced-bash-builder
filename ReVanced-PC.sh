@@ -102,22 +102,22 @@ ytpatch()
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
-	main
+	patcher
 }
 
 ytmpatch()
 {
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube Music apk if it exists...${NC}"
-	rm -rf builds/ReVanced-Music*.apk
+	rm -rf builds/ReVancedMusic*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube Music app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $youtubemusic -c -o ReVanced-Music.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
+	java -jar packages/revanced-cli*.jar -a $youtubemusic -c -o ReVancedMusic.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done";
 	ytmname
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
-	main
+	patcher
 }
 
 ttpatch()
@@ -133,7 +133,7 @@ ttpatch()
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
-	main
+	patcher
 }
 
 rtpatch()
@@ -149,7 +149,7 @@ rtpatch()
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
-	main
+	patcher
 }
 ytname()
 {
@@ -158,8 +158,8 @@ ytname()
 }
 ytmname()
 {
-	mv ReVanced-Music.apk ReVanced-Music-$ytmversion-$data.apk
-	mv ReVanced-Music-$ytmversion-$data.apk builds/
+	mv ReVancedMusic.apk ReVancedMusic-$ytmversion-$data.apk
+	mv ReVancedMusic-$ytmversion-$data.apk builds/
 }
 ttname()
 {
