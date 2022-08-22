@@ -30,7 +30,7 @@ During installation Git for Windows, choose the following options:
 
 
 ### Windows
-1. Create any folder and put the ReVanced-PC.sh script there
+1. Create any folder and put the ReVanced-PC.sh script
 2. Run script in 2 ways:
 - Launch git shell by right-clicking in an empty folder space and selecting "Git Bash Here", then run script by typing: ```./ReVanced.sh```
 - Run script by double-clicking on it
