@@ -1,6 +1,6 @@
 # About ReVanced bash builder:
 
-A simple bash script created by me that I wrote for myself and placed here so that I can download updates whenever I want. 
+A simple bash script that I created for myself and placed here so I can download updates whenever I want. You can use it if you want, I won't be angry. 
 
 #### <ins>This script doesn't have the option to exclude and include specific patches</ins>, because they can be turned on or off in ReVanced settings.
 
