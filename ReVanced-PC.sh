@@ -218,8 +218,8 @@ apk_dowloader()
     mv YouTube-17.32.39.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
 	mv YouTubeMusic-5.17.51.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.56.0.apk
-	mv Twitter-9.56.0.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.56.2.apk
+	mv Twitter-9.56.2.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit-2022.31.0.apk
 	mv Reddit-2022.31.0.apk apk/
 	printf '%b\n' "${YELLOW}Downloaded${NC}"
