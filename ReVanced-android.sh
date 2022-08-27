@@ -97,7 +97,7 @@ ytpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube apk if it exists...${NC}"
 	rm -rf builds/ReVanced-*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $youtube -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --experimental --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a $youtube -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -229,8 +229,8 @@ apk_dowloader()
 	rm -rf apk/Reddit-*.apk
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
-    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.32.39.apk
-    mv YouTube-17.32.39.apk apk/
+    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.29.34.apk
+    mv YouTube-17.29.34.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
 	mv YouTubeMusic-5.17.51.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.56.2.apk
