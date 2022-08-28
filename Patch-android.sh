@@ -250,10 +250,11 @@ necessary_files()
 	printf '%b\n' "${WHITE}3) ${CYAN}Back to menu${NC}";
 	read wybor2
 
-	if [[ $wybor2 < 1 ]] && [[ $wybor2 > 2 ]]; then
+	if [[ $wybor2 < 1 ]] || [[ $wybor2 > 3 ]]; then
 	clear
 	printf '%b\n' "${RED}Choose correctly${NC}";
 	printf '%b\n' "";
+	sleep 0.5
 	main
 	elif [[ $wybor2 == 1 ]]; then
 		checker
@@ -279,10 +280,11 @@ patcher()
 	printf '%b\n' "${WHITE}5) ${CYAN}Back to menu${NC}";
 	read wybor3
 
-	if [[ $wybor3 < 1 ]] && [[ $wybor3 > 5 ]]; then
+	if [[ $wybor3 < 1 ]] || [[ $wybor3 > 5 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
+		sleep 0.5
 		main
 	elif [[ $wybor3 == 1 ]]; then
 		ytpatch
@@ -317,10 +319,11 @@ main()
 	printf '%b\n' "${WHITE}3) ${CYAN}Exit${NC}";
 	read wybor1;
 
-	if [[ $wybor1 < 1 ]] && [[ $wybor1 > 3 ]]; then
+	if [[ $wybor1 < 1 ]] || [[ $wybor1 > 3 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
+		sleep 0.5
 		main
 	elif [[ $wybor1 == 1 ]]; then
 		necessary_files
