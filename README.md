@@ -50,7 +50,7 @@ During installation Git for Windows, choose the following options:
 pkg update
 pkg install wget openjdk-17 -y
 termux-setup-storage
-wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/Build-android.sh
+wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/build-android.sh
 chmod +x ReVanced-android.sh
 ```
 3. Run script by typing: 
