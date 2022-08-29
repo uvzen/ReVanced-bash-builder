@@ -309,7 +309,7 @@ main()
 {
 	data=`date +%e.%m.%Y`
 	#echo $data
-	versions
+	#versions
 	if [[ -d "revanced-cache" ]]; then
 		rm -rf revanced-cache/
 	fi
