@@ -6,33 +6,37 @@ CYAN='\033[0;36m'
 GREEN="\e[32m"
 WHITE="\e[97m"
 NC='\033[0m'
-versions()
-{
-	for youtube in apk/YouTube-*.apk; do
-		[ -f "${youtube}" ] || continue
-		ytversion="${youtube#*-}"
-		ytversion="${ytversion%.apk}"
-		#printf '%b\n' "${CYAN}$ytversion"
-	done
-	for youtubemusic in apk/YouTubeMusic-*.apk; do
-		[ -f "${youtubemusic}" ] || continue
-		ytmversion="${youtubemusic#*-}"
-		ytmversion="${ytmversion%.apk}"
-		#printf '%b\n' "${CYAN}$ytmversion"
-	done
-	for twitter in apk/Twitter-*.apk; do
-		[ -f "${twitter}" ] || continue
-		ttversion="${twitter#*-}"
-		ttversion="${ttversion%.apk}"
-		#printf '%b\n' "${CYAN}$ttversion"
-	done
-	for reddit in apk/Reddit-*.apk; do
-		[ -f "${reddit}" ] || continue
-		rtversion="${reddit#*-}"
-		rtversion="${rtversion%.apk}"
-		#printf '%b\n' "${CYAN}$rtversion"
-	done
-}
+ytversion=17.29.34
+ytmversion=5.17.51
+ttversion=9.56.2
+rtversion=2022.31.0
+#versions()
+#{
+#	for youtube in apk/YouTube-*.apk; do
+#		[ -f "${youtube}" ] || continue
+#		ytversion="${youtube#*-}"
+#		ytversion="${ytversion%.apk}"
+#		#printf '%b\n' "${CYAN}$ytversion"
+#	done
+#	for youtubemusic in apk/YouTubeMusic-*.apk; do
+#		[ -f "${youtubemusic}" ] || continue
+#		ytmversion="${youtubemusic#*-}"
+#		ytmversion="${ytmversion%.apk}"
+#		#printf '%b\n' "${CYAN}$ytmversion"
+#	done
+#	for twitter in apk/Twitter-*.apk; do
+#		[ -f "${twitter}" ] || continue
+#		ttversion="${twitter#*-}"
+#		ttversion="${ttversion%.apk}"
+#		#printf '%b\n' "${CYAN}$ttversion"
+#	done
+#	for reddit in apk/Reddit-*.apk; do
+#		[ -f "${reddit}" ] || continue
+#		rtversion="${reddit#*-}"
+#		rtversion="${rtversion%.apk}"
+#		#printf '%b\n' "${CYAN}$rtversion"
+#	done
+#}
 get_latest_version_info() 
 {
     printf '%b\n' "${BLUE}Obtaining information about the latest version${NC}"
@@ -97,7 +101,7 @@ ytpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube apk if it exists...${NC}"
 	rm -rf builds/ReVanced-*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $youtube -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/YouTube.apk -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -116,7 +120,7 @@ ytmpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube Music apk if it exists...${NC}"
 	rm -rf builds/ReVancedMusic*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube Music app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $youtubemusic -c -o ReVancedMusic.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/YouTubeMusic.apk -c -o ReVancedMusic.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done";
 	ytmname
@@ -134,7 +138,7 @@ ttpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Twitter apk if it exists...${NC}"
 	rm -rf builds/Twitter-*.apk
 	printf '%b\n' "${YELLOW}Patching Twitter app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $twitter -c -o Twitter.apk -b packages/revanced-patches*.jar --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/Twitter.apk -c -o Twitter.apk -b packages/revanced-patches*.jar --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -153,7 +157,7 @@ rtpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Reddit apk if it exists...${NC}"
 	rm -rf builds/Reddit-*.apk
 	printf '%b\n' "${YELLOW}Patching Reddit app...${NC}";
-	java -jar packages/revanced-cli*.jar -a $reddit -c -o Reddit.apk -b packages/revanced-patches*.jar -r --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/Reddit.apk -c -o Reddit.apk -b packages/revanced-patches*.jar -r --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -188,7 +192,7 @@ rtname()
 }
 diceroys()
 {
-	printf '%b\n' "${YELLOW}Folder checking...${NC}";
+	printf '%b\n' "${YELLOW}Folders checking...${NC}";
 	if [[ -d "packages" ]]; then
 		printf '%b\n' "${BLUE}Packages folder exists${NC}"
 	else
@@ -220,23 +224,23 @@ logo()
 apk_dowloader()
 {
 	printf '%b\n' "${YELLOW}Removing YouTube apk if it exists...${NC}"
-	rm -rf apk/YouTube-*.apk
+	rm -rf apk/YouTube.apk
 	printf '%b\n' "${YELLOW}Removing YouTube Music apk if it exists...${NC}"
-	rm -rf apk/YouTubeMusic-*.apk
+	rm -rf apk/YouTubeMusic.apk
 	printf '%b\n' "${YELLOW}Removing Twitter apk if it exists...${NC}"
-	rm -rf apk/Twitter-*.apk
+	rm -rf apk/Twitter.apk
 	printf '%b\n' "${YELLOW}Removing Reddit apk if it exists...${NC}"
-	rm -rf apk/Reddit-*.apk
+	rm -rf apk/Reddit.apk
 	
     printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
-    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube-17.29.34.apk
-    mv YouTube-17.29.34.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic-5.17.51.apk
-	mv YouTubeMusic-5.17.51.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter-9.56.2.apk
-	mv Twitter-9.56.2.apk apk/
-	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit-2022.31.0.apk
-	mv Reddit-2022.31.0.apk apk/
+    curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube.apk
+    mv YouTube.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic.apk
+	mv YouTubeMusic.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Twitter.apk
+	mv Twitter.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit.apk
+	mv Reddit.apk apk/
 	printf '%b\n' "${YELLOW}Downloaded${NC}"
 }
 necessary_files()
