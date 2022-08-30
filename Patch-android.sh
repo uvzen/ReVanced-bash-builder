@@ -7,7 +7,7 @@ GREEN="\e[32m"
 WHITE="\e[97m"
 NC='\033[0m'
 ytversion=17.33.42
-ytmversion=5.17.51
+ytmversion=5.21.52
 ttversion=9.56.2
 rtversion=2022.31.0
 #versions()
