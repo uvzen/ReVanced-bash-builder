@@ -8,8 +8,8 @@ WHITE="\e[97m"
 NC='\033[0m'
 ytversion=17.33.42
 ytmversion=5.22.54
-ttversion=9.56.2
-rtversion=2022.31.0
+ttversion=9.57.0
+rtversion=2022.32.0
 #versions()
 #{
 #	for youtube in apk/YouTube-*.apk; do
