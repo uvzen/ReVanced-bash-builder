@@ -307,7 +307,7 @@ logo
 diceroys
 main()
 {
-	data=`date +%e.%m.%Y`
+	data=`date +%d.%m.%Y`
 	#echo $data
 	#versions
 	if [[ -d "revanced-cache" ]]; then
