@@ -10,33 +10,7 @@ ytversion=17.33.42
 ytmversion=5.22.54
 ttversion=9.57.0
 rtversion=2022.32.0
-#versions()
-#{
-#	for youtube in apk/YouTube-*.apk; do
-#		[ -f "${youtube}" ] || continue
-#		ytversion="${youtube#*-}"
-#		ytversion="${ytversion%.apk}"
-#		#printf '%b\n' "${CYAN}$ytversion"
-#	done
-#	for youtubemusic in apk/YouTubeMusic-*.apk; do
-#		[ -f "${youtubemusic}" ] || continue
-#		ytmversion="${youtubemusic#*-}"
-#		ytmversion="${ytmversion%.apk}"
-#		#printf '%b\n' "${CYAN}$ytmversion"
-#	done
-#	for twitter in apk/Twitter-*.apk; do
-#		[ -f "${twitter}" ] || continue
-#		ttversion="${twitter#*-}"
-#		ttversion="${ttversion%.apk}"
-#		#printf '%b\n' "${CYAN}$ttversion"
-#	done
-#	for reddit in apk/Reddit-*.apk; do
-#		[ -f "${reddit}" ] || continue
-#		rtversion="${reddit#*-}"
-#		rtversion="${rtversion%.apk}"
-#		#printf '%b\n' "${CYAN}$rtversion"
-#	done
-#}
+ttkversion=26.0.2
 get_latest_version_info() 
 {
     printf '%b\n' "${BLUE}Obtaining information about the latest version${NC}"
@@ -170,6 +144,23 @@ rtpatch()
 	fi
 	patcher
 }
+ttkpatch()
+{
+	printf '%b\n' "${BLUE}Removing old ReVanced TikTok apk if it exists...${NC}"
+	rm -rf builds/TikTok-*.apk
+	printf '%b\n' "${YELLOW}Patching TikTok app...${NC}";
+	java -jar packages/revanced-cli*.jar -a apk/TikTok.apk -c -o TikTok.apk -b packages/revanced-patches*.jar -r
+	printf '%b\n' "";
+	printf '%b\n' "${CYAN}Done${NC}";
+	printf '%b\n' "";
+	ttkname
+	printf '%b\n' "${YELLOW}Copying TikTok ReVanced to internal memory...${NC}";
+	cp builds/TikTok-*.apk /data/data/com.termux/files/home/storage/shared
+	if [[ -d "revanced-cache" ]]; then
+		rm -rf revanced-cache/
+	fi
+	patcher
+}
 ytname()
 {
 	mv ReVanced.apk ReVanced-$ytversion-$data.apk
@@ -190,9 +181,14 @@ rtname()
 	mv Reddit.apk Reddit-$rtversion-patched-$data.apk
 	mv Reddit-$rtversion-patched-$data.apk builds
 }
+ttkname()
+{
+	mv TikTok.apk TikTok-$ttkversion-patched-$data.apk
+	mv TikTok-$ttkversion-patched-$data.apk builds/
+}
 diceroys()
 {
-	printf '%b\n' "${YELLOW}Folders checking...${NC}";
+	printf '%b\n' "${YELLOW}Checking folders...${NC}";
 	if [[ -d "packages" ]]; then
 		printf '%b\n' "${BLUE}Packages folder exists${NC}"
 	else
@@ -231,8 +227,10 @@ apk_dowloader()
 	rm -rf apk/Twitter.apk
 	printf '%b\n' "${YELLOW}Removing Reddit apk if it exists...${NC}"
 	rm -rf apk/Reddit.apk
+	printf '%b\n' "${YELLOW}Removing TikTok apk if it exists...${NC}"
+	rm -rf apk/TikTok.apk
 	
-    printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter and Reddit...${NC}"
+    printf '%b\n' "${BLUE}Downloading YouTube, YouTube Music, Twitter, Reddit and TikTok...${NC}"
     curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTube.apk
     mv YouTube.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/YouTubeMusic.apk
@@ -241,6 +239,8 @@ apk_dowloader()
 	mv Twitter.apk apk/
 	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/Reddit.apk
 	mv Reddit.apk apk/
+	curl -qLJO https://github.com/uvzen/ReVanced-bash-builder/releases/download/APPS/TikTok.apk
+	mv TikTok.apk apk/
 	printf '%b\n' "${YELLOW}Downloaded${NC}"
 }
 necessary_files()
@@ -281,10 +281,11 @@ patcher()
 	printf '%b\n' "${WHITE}2) ${CYAN}Patch YouTube Music${NC}";
 	printf '%b\n' "${WHITE}3) ${CYAN}Patch Twitter${NC}";
 	printf '%b\n' "${WHITE}4) ${CYAN}Patch Reddit${NC}"
-	printf '%b\n' "${WHITE}5) ${CYAN}Back to menu${NC}";
+	printf '%b\n' "${WHITE}5) ${CYAN}Patch TikTok${NC}"
+	printf '%b\n' "${WHITE}6) ${CYAN}Back to menu${NC}";
 	read wybor3
 
-	if [[ $wybor3 < 1 ]] || [[ $wybor3 > 5 ]]; then
+	if [[ $wybor3 < 1 ]] || [[ $wybor3 > 6 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
@@ -299,6 +300,8 @@ patcher()
 	elif [[ $wybor3 == 4 ]]; then
 		rtpatch
 	elif [[ $wybor3 == 5 ]]; then
+		ttkpatch
+	elif [[ $wybor3 == 6 ]]; then
 		main
 	fi
 }
