@@ -1,6 +1,6 @@
 # About ReVanced bash builder:
 
-A simple bash script that I created for myself and placed here so I can download updates whenever I want. You can use it if you want, I won't be angry. 
+A simple bash script that I created for myself and placed here so I can download updates whenever I want.
 Script is updated frequently, so before using the script, please check [here](https://github.com/uvzen/ReVanced-bash-builder/releases/tag/scripts) if it has been recently updated!
 
 #### <ins>This script doesn't have the option to exclude and include specific patches</ins>, because they can be turned on or off in ReVanced settings.
@@ -31,16 +31,17 @@ During installation Git for Windows, choose the following options:
 
 
 ### Windows
-1. Create any folder and put the ReVanced-PC.sh script
-2. Run script in 2 ways:
-- Launch git shell by right-clicking in an empty folder space and selecting "Git Bash Here", then run script by typing: ```./ReVanced.sh```
+1. Download Patch-PC.sh script from [releases](https://github.com/uvzen/ReVanced-bash-builder/releases/tag/scripts)
+2. Create any folder and put the ReVanced-PC.sh script
+3. Run script in 2 ways:
+- Launch git shell by right-clicking in an empty folder space and selecting "Git Bash Here", then run script by typing: ```./Patch-PC.sh```
 - Run script by double-clicking on it
-3. When you run the script for the first time, download the necessary packages and applications
-4. Enjoy build ReVanced
+4. When you run the script for the first time, download the necessary packages and applications
+5. Enjoy build ReVanced
 
 ### Linux
 1. Create any folder and put the ReVanced-PC.sh script 
-2. Open terminal and run script ```./ReVanced-PC.sh```
+2. Open terminal and run script ```./Patch-PC.sh```
 3. When you run the script for the first time, download the necessary packages and applications
 4. Enjoy build ReVanced
 
@@ -52,9 +53,9 @@ pkg update
 pkg install wget openjdk-17 -y
 termux-setup-storage
 wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/Patch-android.sh
-chmod +x ReVanced-android.sh
+chmod +x Patch-android.sh
 ```
 3. Run script by typing: 
-```./ReVanced-android.sh```
+```./Patch-android.sh```
 4. When you run the script for the first time, download the necessary packages and applications
 5. Enjoy build ReVanced on android
