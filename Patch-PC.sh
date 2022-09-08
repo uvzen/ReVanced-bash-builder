@@ -8,9 +8,9 @@ WHITE="\e[97m"
 NC='\033[0m'
 ytversion=17.33.42
 ytmversion=5.22.54
-ttversion=9.57.0
-rtversion=2022.32.0
-ttkversion=26.0.2
+ttversion=9.58.0
+rtversion=2022.33.0
+ttkversion=26.1.2
 get_latest_version_info() 
 {
     printf '%b\n' "${BLUE}Obtaining information about the latest version${NC}"
