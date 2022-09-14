@@ -9,7 +9,7 @@ NC='\033[0m'
 ytversion=17.33.42
 ytmversion=5.23.50
 ttversion=9.58.1
-rtversion=2022.33.0
+rtversion=2022.34.0
 ttkversion=26.1.3
 get_latest_version_info() 
 {
