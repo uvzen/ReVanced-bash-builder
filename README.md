@@ -49,7 +49,7 @@ During installation Git for Windows, choose the following options:
 1. Open Termux app
 2. You have to run these commands:
 ```
-pkg update
+pkg update -y
 pkg install wget openjdk-17 -y
 termux-setup-storage
 wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/Patch-android.sh
