@@ -78,7 +78,7 @@ ytpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube apk if it exists...${NC}"
 	rm -rf builds/ReVanced-*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/YouTube.apk -c -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/YouTube.apk -o ReVanced.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -97,7 +97,7 @@ ytmpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced YouTube Music apk if it exists...${NC}"
 	rm -rf builds/ReVancedMusic*.apk
 	printf '%b\n' "${YELLOW}Patching YouTube Music app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/YouTubeMusic.apk -c -o ReVancedMusic.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/YouTubeMusic.apk -o ReVancedMusic.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done";
 	ytmname
@@ -115,7 +115,7 @@ ttpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Twitter apk if it exists...${NC}"
 	rm -rf builds/Twitter-*.apk
 	printf '%b\n' "${YELLOW}Patching Twitter app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/Twitter.apk -c -o Twitter.apk -b packages/revanced-patches*.jar --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/Twitter.apk -o Twitter.apk -b packages/revanced-patches*.jar --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -134,7 +134,7 @@ rtpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Reddit apk if it exists...${NC}"
 	rm -rf builds/Reddit-*.apk
 	printf '%b\n' "${YELLOW}Patching Reddit app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/Reddit.apk -c -o Reddit.apk -b packages/revanced-patches*.jar -r --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
+	java -jar packages/revanced-cli*.jar -a apk/Reddit.apk -o Reddit.apk -b packages/revanced-patches*.jar -r --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -152,7 +152,7 @@ ttkpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced TikTok apk if it exists...${NC}"
 	rm -rf builds/TikTok-*.apk
 	printf '%b\n' "${YELLOW}Patching TikTok app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/TikTok.apk -c -o TikTok.apk -b packages/revanced-patches*.jar -r
+	java -jar packages/revanced-cli*.jar -a apk/TikTok.apk -o TikTok.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk -r --custom-aapt2-binary /data/data/com.termux/files/usr/bin/aapt2
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
