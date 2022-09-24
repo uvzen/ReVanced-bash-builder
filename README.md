@@ -40,7 +40,7 @@ During installation Git for Windows, choose the following options:
 5. Enjoy build ReVanced
 
 ### Linux
-1. Create any folder and put the ReVanced-PC.sh script 
+1. Create any folder and put the Patch-PC.sh script 
 2. Open terminal and run script ```./Patch-PC.sh```
 3. When you run the script for the first time, download the necessary packages and applications
 4. Enjoy build ReVanced
