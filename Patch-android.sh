@@ -11,6 +11,7 @@ ytmversion=5.23.50
 ttversion=9.58.2
 rtversion=2022.35.0
 ttkversion=26.3.3
+updater_file="update-android.sh"
 get_latest_version_info() 
 {
     printf '%b\n' "${BLUE}Obtaining information about the latest version${NC}"
@@ -308,6 +309,23 @@ patcher()
 		main
 	fi
 }
+updater()
+{
+	if [[ -f "$updater_file" ]]; then
+		printf '%b\n' "${YELLOW}Running the updater script...${NC}"
+		sleep 3
+		bash update-android.sh
+	else
+		printf '%b\n' "${YELLOW}Downloading a updater script...${NC}"
+		wget https://github.com/uvzen/ReVanced-bash-builder/releases/download/scripts/update-android.sh
+		printf '%b\n' "${CYAN}Done${NC}";
+		chmod +x update-android.sh
+		sleep 2
+		printf '%b\n' "${YELLOW}Running a updater script...${NC}"
+		sleep 3
+		bash update-android.sh
+	fi
+}
 clear
 logo
 diceroys
@@ -326,10 +344,11 @@ main()
 	printf '%b\n' "${YELLOW}Select option${NC}";
 	printf '%b\n' "${WHITE}1) ${CYAN}Download necessary files${NC}"
 	printf '%b\n' "${WHITE}2) ${CYAN}APK Patcher${NC}";
-	printf '%b\n' "${WHITE}3) ${CYAN}Exit${NC}";
+	printf '%b\n' "${WHITE}3) ${CYAN}Update script${NC}";
+	printf '%b\n' "${WHITE}4) ${CYAN}Exit${NC}";
 	read wybor1;
 
-	if [[ $wybor1 < 1 ]] || [[ $wybor1 > 3 ]]; then
+	if [[ $wybor1 < 1 ]] || [[ $wybor1 > 4 ]]; then
 		clear
 		printf '%b\n' "${RED}Choose correctly${NC}";
 		printf '%b\n' "";
@@ -340,6 +359,8 @@ main()
 	elif [[ $wybor1 == 2 ]]; then
 		patcher
 	elif [[ $wybor1 == 3 ]]; then
+		updater
+	elif [[ $wybor1 == 4 ]]; then
 		exit 1;
 	fi
 }
