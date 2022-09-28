@@ -107,7 +107,7 @@ ttpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Twitter apk if it exists...${NC}"
 	rm -rf builds/Twitter-*.apk
 	printf '%b\n' "${YELLOW}Patching Twitter app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/Twitter.apk -o Twitter.apk -b packages/revanced-patches*.jar 
+	java -jar packages/revanced-cli*.jar -a apk/Twitter.apk -o Twitter.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -123,7 +123,7 @@ rtpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced Reddit apk if it exists...${NC}"
 	rm -rf builds/Reddit-*.apk
 	printf '%b\n' "${YELLOW}Patching Reddit app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/Reddit.apk -o Reddit.apk -b packages/revanced-patches*.jar -r
+	java -jar packages/revanced-cli*.jar -a apk/Reddit.apk -o Reddit.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
@@ -138,7 +138,7 @@ ttkpatch()
 	printf '%b\n' "${BLUE}Removing old ReVanced TikTok apk if it exists...${NC}"
 	rm -rf builds/TikTok-*.apk
 	printf '%b\n' "${YELLOW}Patching TikTok app...${NC}";
-	java -jar packages/revanced-cli*.jar -a apk/TikTok.apk -o TikTok.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk -r
+	java -jar packages/revanced-cli*.jar -a apk/TikTok.apk -o TikTok.apk -b packages/revanced-patches*.jar -m packages/app-release-unsigned.apk
 	printf '%b\n' "";
 	printf '%b\n' "${CYAN}Done${NC}";
 	printf '%b\n' "";
