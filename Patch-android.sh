@@ -8,8 +8,8 @@ WHITE="\e[97m"
 NC='\033[0m'
 ytversion=17.36.37
 ytmversion=5.23.50
-ttversion=9.58.2
-rtversion=2022.35.0
+ttversion=9.61.0
+rtversion=2022.36.0
 ttkversion=26.3.3
 updater_file="update-android.sh"
 get_latest_version_info() 
