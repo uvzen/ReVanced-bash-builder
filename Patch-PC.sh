@@ -9,8 +9,8 @@ NC='\033[0m'
 ytversion=17.36.37
 ytmversion=5.26.52
 ttversion=9.62.0
-rtversion=2022.36.0
-ttkversion=26.3.3
+rtversion=2022.38.0
+ttkversion=26.5.1
 updater_file="update-PC.sh"
 get_latest_version_info() 
 {
