@@ -1,3 +1,6 @@
+# THIS PROJECT IS DISCONTINUED AND WILL NOT GET ANYMORE UPDATES
+
+
 # About ReVanced bash builder:
 
 A simple bash script that I created for myself and placed here so I can download updates whenever I want.
